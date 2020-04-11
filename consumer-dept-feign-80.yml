@@ -1,0 +1,26 @@
+spring:
+   profiles:
+     active: -dev
+
+---
+spring: 
+   profiles: dev   #开发环境
+   application: 
+      name: consumer-dept-feign-80
+server:
+    port: 80
+eureka:
+   client:
+      service-url:
+          defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/
+---
+spring:
+   profiles: test    #测试环境
+   application: 
+      name: consumer-dept-feign-80
+server:
+    port: 800
+eureka:
+   client:
+      service-url:
+         defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/
